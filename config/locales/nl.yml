@@ -1,0 +1,16 @@
+nl:
+  admin:
+    podcasts:
+      index:
+        create_new: Maak een nieuwe Podcast
+        reorder: Wijzig de volgorde van de Podcasts
+        reorder_done: Klaar met het wijzingen van de volgorde van de Podcasts
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen podcasts. Druk op 'Maak een nieuwe Podcast' om de eerste aan te maken.
+      singular_name:
+        view_live: Bekijk deze podcast op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze podcast
+        delete: Verwijder deze podcast voor eeuwig
+  podcasts:
+    show:
+      other: Andere Podcasts
