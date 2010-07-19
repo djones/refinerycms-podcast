@@ -26,7 +26,7 @@ Then run:
 
 ## Setup
 
-Edit /app/views/podcasts/index.rss.builder and fill out the documented parts with your podcast
+Edit ``/app/views/podcasts/index.rss.builder`` and fill out the documented parts with your podcast
 channel information.
 
 ## Usage
@@ -37,7 +37,7 @@ Now on the backend of Refinery you should see a new "Podcast" tab. You can add y
 
 Your iTunes Podcast URL should now be available at:
 
-  http://yoursite.com/podcast.rss
+    http://yoursite.com/podcast.rss
   
 Now you need to tell iTunes about your podcast URL. Read: [How to publish a podcast on the iTunes Store](http://support.apple.com/kb/TA23478)
 
