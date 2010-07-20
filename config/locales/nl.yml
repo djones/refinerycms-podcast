@@ -7,7 +7,7 @@ nl:
         reorder_done: Klaar met het wijzingen van de volgorde van de Podcasts
         sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
         no_items_yet: Er zijn nog geen podcasts. Druk op 'Maak een nieuwe Podcast' om de eerste aan te maken.
-      singular_name:
+      podcast:
         view_live: Bekijk deze podcast op de website <br/><em>(opent een nieuw venster)</em>
         edit: Bewerk deze podcast
         delete: Verwijder deze podcast voor eeuwig

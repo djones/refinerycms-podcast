@@ -1,10 +1,9 @@
 #!/usr/bin/env ruby
-require File.expand_path('../podcast.rb', __FILE__)
+require File.expand_path('../refinery/podcast.rb', __FILE__)
 version = Refinery::Podcast.version
 raise "Could not get version so gemspec can not be built" if version.nil?
-files = %w( readme.md license.md  )
-%w(app config generators lib public rails test vendor).each do |dir|
-  files += Dir.glob("#{dir}/**/*") if File.directory?(dir)
+files = Dir.glob("**/*").flatten.reject do |file|
+  file =~ /\.gem(spec)?$/
 end
 
 gemspec = <<EOF

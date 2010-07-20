@@ -20,7 +20,7 @@ namespace :refinery do
     	    puts "Copied to #{copy_to}"
         else
           puts "'#{File.join copy[:to], copy[:filename]}' already existed in your application so your existing file was not overwritten - use force=true to overwrite."
-          puts "Without this file being up to date, the portfolio may not function properly."
+          puts "Without this file being up to date, the podcast may not function properly."
         end
       end
 

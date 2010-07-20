@@ -2,6 +2,10 @@
 
 By: [David Jones](http://www.d-jones.com) from [Resolve Digital](http://www.resolvedigital.com)
 
+## Requirements
+
+Refinery CMS >= 0.9.7.7
+
 ## Installation Using Gem
 
 Open your ``Gemfile`` and add this line to the bottom:

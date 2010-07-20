@@ -1,5 +1,3 @@
-require File.expand_path("../../lib/podcast.rb", __FILE__)
-
 ActionController::Routing::Routes.draw do |map|
   map.resources :podcasts
 

@@ -7,7 +7,7 @@ en:
         reorder_done: Done Reordering Podcasts
         sorry_no_results: Sorry! There are no results found.
         no_items_yet: There are no podcasts yet. Click "Create a new Podcast" to add your first podcast.
-      singular_name:
+      podcast:
         view_live: View this podcast live <br/><em>(opens in a new window)</em>
         edit: Edit this podcast
         delete: Remove this podcast forever
