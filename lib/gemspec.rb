@@ -3,7 +3,7 @@ require File.expand_path('../refinery/podcast.rb', __FILE__)
 version = Refinery::Podcast.version
 raise "Could not get version so gemspec can not be built" if version.nil?
 files = Dir.glob("**/*").flatten.reject do |file|
-  file =~ /\.gem(spec)?$/
+  file =~ /\.gem(spec)?$/
 end
 
 gemspec = <<EOF
@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.summary           = %q{Ruby on Rails podcast plugin for RefineryCMS.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}
-  s.authors           = %w(Resolve\\ Digital)
+  s.authors           = %w(David\\ Jones)
   s.require_paths     = %w(lib)
 
   s.files             = [
