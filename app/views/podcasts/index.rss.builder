@@ -9,12 +9,16 @@ xml.channel do
   #  Accepted values are those in the ISO 639-1 Alpha-2 list (two-letter language codes, some with possible modifiers, such as "en-us").
   xml.language 'en-us'
   
-  xml.copyright "&#x2117; &amp; &#xA9; #{Time.now.year} Jack &amp; Jill"
+  xml.copyright "© #{Time.now.year} Jack &amp; Jill"
   xml.tag!('itunes:subtitle', 'A show about everything')
   
   # The content of this tag is shown in the Artist column in iTunes.
   xml.tag!('itunes:author', 'John Doe')
-  
+
+  # This tag should be used to indicate whether or not your podcast contains 
+  # explicit material. The three values for this tag are "yes", "no", and "clean".
+  xml.tag!('itunes:explicit', 'clean')    
+
   # The contents of this tag are shown in a separate window that appears when the 
   # "circled i" in the Description column is clicked. It also appears on the iTunes 
   # page for your podcast. This field can be up to 4000 characters. 
@@ -32,7 +36,7 @@ xml.channel do
   
   # upload an image to your resources tab and link it in here
   # iTunes prefers square .jpg images that are at least 600 x 600 pixels
-  xml.tag!('itunes:image', 'http://mysite.com/system/0000/1000x1000.jpg')
+  xml.tag!('itunes:image', :href => 'http://mysite.com/system/0000/1000x1000.jpg')
   
   # select from the list of categories here:
   # http://www.apple.com/itunes/podcasts/specs.html#categories
@@ -44,12 +48,14 @@ xml.channel do
     xml.item do
       xml.title item.title
       xml.tag!('itunes:author', item.author)
-      xml.subtitle item.subtitle
-      xml.summary item.summary   
-      xml.enclosure :url => (request.protocol + request.host_with_port + item.file.public_filename), :length => item.file.size, :length => item.file.content_type
+      xml.tag!('itunes:subtitle', item.subtitle)
+      xml.tag!('itunes:summary', item.summary)
+      xml.enclosure :url => (request.protocol + request.host_with_port + item.file.public_filename), :length => item.file.size, :type => item.file.content_type
+      xml.guid (request.protocol + request.host_with_port + item.file.public_filename)
       xml.tag!('pubDate', item.published.strftime("%a, %d %b %Y %H:%M:%S %Z"))
       xml.tag!('itunes:duration', item.duration)
       xml.tag!('itunes:keywords', item.keywords)
+      xml.tag!('itunes:explicit', 'clean')
     end
   end
 end
