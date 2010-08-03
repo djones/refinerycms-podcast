@@ -24,7 +24,7 @@ class <%= migration_name %> < ActiveRecord::Migration
   end
 
   def self.down
-    UserPlugin.destroy_all({:title => "Podcast"})
+    UserPlugin.destroy_all({:name => "Podcast"})
 
     drop_table :podcasts
   end
