@@ -1,7 +1,7 @@
 Refinery::Plugin.register do |plugin|
-  plugin.title = "Podcasts"
+ #plugin.title = "Podcasts"
   plugin.name = "podcasts"
-  plugin.description = "Manage Podcasts"
+ #plugin.description = "Manage Podcasts"
   plugin.version = 1.0
   plugin.url = {:controller => "/admin/podcasts", :action => "index"}
   plugin.activity = {
