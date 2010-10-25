@@ -10,7 +10,7 @@ Refinery CMS >= 0.9.7.7
 
 Open your ``Gemfile`` and add this line to the bottom:
 
-    gem 'refinerycms-podcast', '= 0.5'
+    gem 'refinerycms-podcast', '= 0.6'
 
 Now run ``bundle install`` and once bundler has installed the gem run:
 
@@ -42,7 +42,7 @@ Now on the backend of Refinery you should see a new "Podcast" tab. You can add y
 Your iTunes Podcast URL should now be available at:
 
     http://yoursite.com/podcast.rss
-  
+
 Now you need to tell iTunes about your podcast URL. Read: [How to publish a podcast on the iTunes Store](http://support.apple.com/kb/TA23478)
 
 For more detailed technical information about making iTunes podcasts read: [Making a Podcast](http://www.apple.com/itunes/podcasts/specs.html)

@@ -1,12 +1,18 @@
 Refinery::Plugin.register do |plugin|
   plugin.name = "podcasts"
-  plugin.version = 1.0
+
+  # Add support for older versions
+  if Refinery.version < '0.9.8'
+    plugin.title = "Podcasts" if Refinery.version < '0.9.8'
+    plugin.description = "Manage Podcasts"
+    plugin.directory = directory
+  end
+
+  plugin.version = '0.6'
   plugin.url = {:controller => "/admin/podcasts", :action => "index"}
   plugin.activity = {
     :class => Podcast,
     :url_prefix => "edit",
     :title => 'title'
   }
-  # this tells refinery where this plugin is located on the filesystem and helps with urls.
-  plugin.directory = directory if plugin.respond_to?(:directory)
 end

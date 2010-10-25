@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.name              = %q{refinerycms-podcast}
-  s.version           = %q{0.5}
+  s.version           = %q{0.6}
   s.description       = %q{Plugin for Refinery CMS to manage and publish podcasts to iTunes}
-  s.date              = %q{2010-07-20}
+  s.date              = %q{2010-10-26}
   s.summary           = %q{Ruby on Rails podcast plugin for RefineryCMS.}
   s.email             = %q{info@refinerycms.com}
   s.homepage          = %q{http://refinerycms.com}

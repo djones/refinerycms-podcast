@@ -7,7 +7,7 @@ module Refinery
 
     class Version
       def self.to_s
-        %q{0.5}
+        %q{0.6}
       end
     end
 

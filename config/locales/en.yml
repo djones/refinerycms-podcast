@@ -1,4 +1,8 @@
 en:
+  plugins:
+    podcasts:
+      title: Podcasts
+      description: Manage podcasts
   admin:
     podcasts:
       index:
