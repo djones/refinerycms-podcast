@@ -1,7 +1,5 @@
 Refinery::Plugin.register do |plugin|
- #plugin.title = "Podcasts"
   plugin.name = "podcasts"
- #plugin.description = "Manage Podcasts"
   plugin.version = 1.0
   plugin.url = {:controller => "/admin/podcasts", :action => "index"}
   plugin.activity = {
@@ -10,5 +8,5 @@ Refinery::Plugin.register do |plugin|
     :title => 'title'
   }
   # this tells refinery where this plugin is located on the filesystem and helps with urls.
-  plugin.directory = directory
+  plugin.directory = directory if plugin.respond_to?(:directory)
 end
