@@ -3,7 +3,7 @@
 ## How to build this engine as a gem
 
     cd vendor/engines/podcasts
-    gem build refinerycms-podcasts.gempspec
+    gem build refinerycms-podcasts.gemspec
     gem install refinerycms-podcasts.gem
     
     # Sign up for a http://rubygems.org/ account and publish the gem
