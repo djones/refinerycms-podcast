@@ -1,0 +1,20 @@
+nb:
+  plugins:
+    podcasts:
+      title: Podcasts
+  admin:
+    podcasts:
+      index:
+        title: Podcasts
+        create_new: Lag en ny Podcast
+        reorder: Endre rekkefølgen på Podcasts
+        reorder_done: Ferdig å endre rekkefølgen Podcasts
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Podcasts enda. Klikk på "Lag en ny Podcast" for å legge til din første podcast.
+      podcast:
+        view_live_html: Vis hvordan denne podcast ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne podcast
+        delete: Fjern denne podcast permanent
+  podcasts:
+    show:
+      other: Andre Podcasts

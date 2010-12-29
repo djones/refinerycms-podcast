@@ -1,59 +1,62 @@
-<% form_for [:admin, @podcast] do |f| -%>
-  <%= f.error_messages %>
+<%= form_for [:admin, @podcast] do |f| -%>
+  <%= render :partial => "/shared/admin/error_messages", :locals => {
+    :object => @podcast,
+    :include_object_name => true
+  } %>
   
-  <div class='field'>
-    <%= f.label :title -%>
-    <%= f.text_field :title, :class => 'larger widest' -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :subtitle -%>
-    <%= f.text_field :subtitle, :size => 100 -%>
-  </div>
-  
-  <div class='field'>
-    <span class='label_with_help'>
-      <%= f.label :file, 'Podcast file' -%>
-      <%= refinery_help_tag "Supported file formats include .m4a, .mp3, .mov, .mp4, .m4v, and .pdf" %>
-    </span>
-    <%= render :partial => "/shared/admin/resource_picker", :locals => {
-      :f => f,
-      :field => :file_id,
-      :resource => @podcast.file,
-      :description => "podcast"
-    } %>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :published -%>
-    <%= f.date_select :published -%>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :author -%>
-    <%= f.text_field :author -%>
-  </div>
-  
-  <div class='field'>
-    <span class='label_with_help'>
-      <%= f.label :duration -%>
-      <%= refinery_help_tag "In HH:MM:SS format. E.g. \"10:22\" for 10 minutes 22 seconds" %>
-    </span>
-    <%= f.text_field :duration, :size => 6 -%>
-  </div>
-  
-  <div class='field'>
-    <span class='label_with_help'>
-      <%= f.label :keywords -%>
-      <%= refinery_help_tag "Up to 12 keywords separated by commas. <br/><br/>E.g. rails, ruby on rails, refinerycms, refinery. <br/><br/>According to iTunes, the best use for keywords is to include common misspellings of your name or title, to ensure your podcast is still searchable despite a misspelling. To prevent keyword abuse, iTunes indexes only the first 12 keywords found in this tag." %>
-    </span>
-    <%= f.text_field :keywords, :size => 100  -%><br/>
-  </div>
-  
-  <div class='field'>
-    <%= f.label :summary -%>
-    <%= f.text_area :summary, :rows => 5, :class => 'widest' -%>
-  </div>
-  
-  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
-<% end -%>
+    <div class='field'>
+      <%= f.label :title -%>
+      <%= f.text_field :title, :class => 'larger widest' -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :subtitle -%>
+      <%= f.text_field :subtitle, :size => 100 -%>
+    </div>
+
+    <div class='field'>
+      <span class='label_with_help'>
+        <%= f.label :file, 'Podcast file' -%>
+        <%= refinery_help_tag "Supported file formats include .m4a, .mp3, .mov, .mp4, .m4v, and .pdf" %>
+      </span>
+      <%= render :partial => "/shared/admin/resource_picker", :locals => {
+        :f => f,
+        :field => :file_id,
+        :resource => @podcast.file,
+        :description => "podcast"
+      } %>
+    </div>
+
+    <div class='field'>
+      <%= f.label :published -%>
+      <%= f.date_select :published -%>
+    </div>
+
+    <div class='field'>
+      <%= f.label :author -%>
+      <%= f.text_field :author -%>
+    </div>
+
+    <div class='field'>
+      <span class='label_with_help'>
+        <%= f.label :duration -%>
+        <%= refinery_help_tag "In HH:MM:SS format. E.g. \"10:22\" for 10 minutes 22 seconds" %>
+      </span>
+      <%= f.text_field :duration, :size => 6 -%>
+    </div>
+
+    <div class='field'>
+      <span class='label_with_help'>
+        <%= f.label :keywords -%>
+        <%= refinery_help_tag "Up to 12 keywords separated by commas. <br/><br/>E.g. rails, ruby on rails, refinerycms, refinery. <br/><br/>According to iTunes, the best use for keywords is to include common misspellings of your name or title, to ensure your podcast is still searchable despite a misspelling. To prevent keyword abuse, iTunes indexes only the first 12 keywords found in this tag." %>
+      </span>
+      <%= f.text_field :keywords, :size => 100  -%><br/>
+    </div>
+
+    <div class='field'>
+      <%= f.label :summary -%>
+      <%= f.text_area :summary, :rows => 5, :class => 'widest' -%>
+    </div>
+
+    <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+  <% end -%>

@@ -1,4 +1,4 @@
-class <%= migration_name %> < ActiveRecord::Migration
+class CreatePodcasts < ActiveRecord::Migration
 
   def self.up
     create_table :podcasts do |t|
@@ -17,14 +17,13 @@ class <%= migration_name %> < ActiveRecord::Migration
 
     add_index :podcasts, :id
 
-    User.find(:all).each do |user|
-      user.plugins.create(:name => "Podcast",
-                          :position => (user.plugins.maximum(:position) || -1) +1)
-    end
+    load(Rails.root.join('db', 'seeds', 'podcasts.rb'))
   end
 
   def self.down
-    UserPlugin.destroy_all({:name => "Podcast"})
+    UserPlugin.destroy_all({:name => "podcasts"})
+
+    Page.delete_all({:link_url => "/podcasts"})
 
     drop_table :podcasts
   end
