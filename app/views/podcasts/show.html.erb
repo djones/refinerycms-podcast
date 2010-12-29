@@ -1,0 +1,36 @@
+<% content_for :body_content_title do %>
+  <%= @podcast.title %>:<%= @podcast.subtitle %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <section>
+    <h1>Summary</h1>
+    <p>    
+      <%=raw @podcast.summary %>
+    </p>
+  </section>
+  
+  <section>
+    <h1>Author</h1>
+    <p>    
+      <%=raw @podcast.author %>
+    </p>
+  </section>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+<aside>
+  <h2><%= t('.other') %></h2>
+  <ul id="partner_events">
+    <% @podcasts.each do |podcast| %>
+      <li>
+        <%= link_to podcast.title, podcast %>
+      </li>
+    <% end %>
+  </ul>
+</aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

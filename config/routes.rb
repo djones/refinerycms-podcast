@@ -10,5 +10,5 @@ Refinery::Application.routes.draw do
     end
   end
   
-  match '/podcast.rss' => "podcasts/#index", :as => :podcast, :format => 'rss'
+  #match '/podcast.rss' => "podcasts/#index", :as => :podcast, :format => 'rss'
 end

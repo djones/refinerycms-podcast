@@ -1,4 +1,11 @@
-#podcasts
-  %ul
-    - @podcasts.each do |podcast|
-      %li= render "podcast", :podcast => podcast
+<% content_for :body_content_left do %>
+  <ul id="podcasts">
+    <% @podcasts.each do |podcast| %>
+      <li>
+        <%= link_to podcast.title, podcast %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

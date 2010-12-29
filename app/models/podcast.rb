@@ -1,6 +1,6 @@
 class Podcast < ActiveRecord::Base
 
-  acts_as_indexed :fields => [:title, :author, :subtitle, :duration, :keywords, :summary]
+  acts_as_indexed :fields => [:title, :author, :subtitle, :duration, :keywords, :summary, :content_type_tags, :genre_tags, :topic_tags]
   
   validates :title, :presence => true, :uniqueness => true
   
