@@ -11,7 +11,6 @@ module Refinery
         Refinery::Plugin.register do |plugin|
           plugin.name = "podcasts"
           plugin.directory = "podcasts"
-          plugin.menu_match = /(refinery|admin)\/podcast(s|_settings)$/
           plugin.activity = {:class => Podcast}
         end
       end
