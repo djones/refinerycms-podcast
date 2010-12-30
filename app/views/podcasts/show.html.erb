@@ -18,6 +18,13 @@
     </p>
   </section>
   
+  <section>
+    <h1>Listen Now</h1>
+<p>     <%if @podcast.file%>
+				<%= link_to 'listen now', @podcast.file.url %>
+        <%end%>
+</p>
+  </section>
 <% end %>
 
 <% content_for :body_content_right do %>

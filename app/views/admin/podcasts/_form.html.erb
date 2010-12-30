@@ -8,7 +8,9 @@
       <%= f.label :title -%>
       <%= f.text_field :title, :class => 'larger widest' -%>
     </div>
-
+    
+    <%= render '/shared/alc_special_attrs', :f => f %>
+    
     <div class='field'>
       <%= f.label :subtitle -%>
       <%= f.text_field :subtitle, :size => 100 -%>
