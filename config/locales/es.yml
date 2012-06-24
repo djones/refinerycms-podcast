@@ -1,0 +1,35 @@
+es:
+  refinery:
+    plugins:
+      podcasts:
+        title: Podcasts
+#        article: masculino/femenino
+    podcasts:
+      admin:
+        podcasts:
+          actions:
+            create_new: Crear nuevo podcast
+            reorder: Reordenar podcasts
+            reorder_done: Reordenación de podcasts completada
+          records:
+            title: Podcasts
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay podcasts todavía. Pulsa en "Crear nuevo Podcast" para crear tu primer podcast.
+          podcast:
+            view_live_html: Ver este podcast como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este podcast
+            delete: Borrar este podcast para siempre
+      podcasts:
+        show:
+          other: Otros podcasts
+  activerecord:
+    attributes:
+      'refinery/podcasts/podcast':
+        title: Title
+        author: Author
+        subtitle: Subtitle
+        file_id: File
+        published_at: Published At
+        duration: Duration
+        keywords: Keywords
+        summary: Summary

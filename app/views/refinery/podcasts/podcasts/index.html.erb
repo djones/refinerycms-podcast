@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="podcasts">
+    <% @podcasts.each do |podcast| %>
+      <li>
+        <%= link_to podcast.title, refinery.podcasts_podcast_path(podcast) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>
