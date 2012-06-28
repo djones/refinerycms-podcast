@@ -9,7 +9,7 @@
       <%=raw @podcast.author %>
     </p>
   </section>
-  <% if @podcast.file? %>
+  <% if @podcast.file.present? %>
     <section>
       <h1>Listen Now</h1>
       <p>

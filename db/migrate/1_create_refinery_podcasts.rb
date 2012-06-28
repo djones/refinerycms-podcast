@@ -1,4 +1,4 @@
-class CreatePodcastsPodcasts < ActiveRecord::Migration
+class CreateRefineryPodcasts < ActiveRecord::Migration
 
   def up
     create_table :refinery_podcasts do |t|

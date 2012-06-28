@@ -1,3 +1,6 @@
+require 'acts_as_indexed'
+require 'friendly_id'
+
 module Refinery
   module Podcasts
     class Podcast < Refinery::Core::BaseModel
@@ -10,6 +13,10 @@ module Refinery
       validates :title, :presence => true, :uniqueness => true
 
       belongs_to :file, :class_name => '::Refinery::Resource'
+
+      extend FriendlyId
+
+      friendly_id :title, :use => :slugged
 
       def episode_number
         self.class.order('published_at DESC').
