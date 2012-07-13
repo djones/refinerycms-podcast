@@ -2,25 +2,25 @@ en:
   refinery:
     plugins:
       podcasts:
-        title: Podcasts
+        title: Podcast Episodes
     podcasts:
       admin:
         podcasts:
           actions:
-            create_new: Add New Podcast
-            reorder: Reorder Podcasts
-            reorder_done: Done Reordering Podcasts
+            create_new: Add New Episode
+            reorder: Reorder Episodes
+            reorder_done: Done Reordering Episodes
           records:
             title: Podcasts
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Podcasts yet. Click "Add New Podcast" to add your first podcast.
+            no_items_yet: There are no episodes yet. Click "Add New Episode" to add your first podcast episode.
           podcast:
-            view_live_html: View this podcast live <br/><em>(opens in a new window)</em>
-            edit: Edit this podcast
-            delete: Remove this podcast forever
+            view_live_html: View this episode live <br/><em>(opens in a new window)</em>
+            edit: Edit this episode
+            delete: Remove this episode forever
       podcasts:
         show:
-          other: Other Podcasts
+          other: Other Episodes
   activerecord:
     attributes:
       'refinery/podcasts/podcast':
