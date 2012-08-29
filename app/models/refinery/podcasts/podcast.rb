@@ -23,6 +23,18 @@ module Refinery
                    where(self.class.arel_table[:id].lteq(self.id)).
                    count
       end
+
+      default_scope :order => "published_at DESC"
+
+      class << self
+        def published
+          where arel_table[:published_at].lteq(Date.today)
+        end
+
+        def latest(limit = 10)
+          published.limit limit
+        end
+      end
     end
   end
 end
