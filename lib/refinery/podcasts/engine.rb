@@ -1,5 +1,4 @@
 require 'refinerycms-core'
-require 'acts_as_indexed'
 
 module Refinery
   module Podcasts
