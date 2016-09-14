@@ -1,10 +1,11 @@
 require 'refinerycms-core'
 
 module Refinery
-  autoload :PodcastsGenerator, 'generators/refinery/podcasts_generator'
+  autoload :PodcastsGenerator, 'generators/refinery/podcasts/podcasts_generator'
 
   module Podcasts
     require 'refinery/podcasts/engine'
+    require 'refinery/podcasts/configuration'
 
     class << self
       attr_writer :root

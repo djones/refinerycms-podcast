@@ -1,5 +1,3 @@
-require 'refinerycms-core'
-
 module Refinery
   module Podcasts
     class Engine < Rails::Engine
@@ -8,15 +6,11 @@ module Refinery
 
       engine_name :refinery_podcasts
 
-      initializer "register refinerycms_podcasts plugin" do
+      before_inclusion do
         Refinery::Plugin.register do |plugin|
+          plugin.pathname = root
           plugin.name = "podcasts"
           plugin.url = proc { Refinery::Core::Engine.routes.url_helpers.podcasts_admin_podcasts_path }
-          plugin.pathname = root
-          plugin.activity = {
-            :class_name => :'refinery/podcasts/podcast'
-          }
-
         end
       end
 

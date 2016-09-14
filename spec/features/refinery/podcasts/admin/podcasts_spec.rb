@@ -4,19 +4,17 @@ require "spec_helper"
 describe Refinery do
   describe "Podcasts" do
     describe "Admin" do
-      describe "podcasts" do
-        refinery_login_with :refinery_user
-
+      describe "podcasts", type: :feature do
         describe "podcasts list" do
-          before(:each) do
-            FactoryGirl.create(:podcast, :title => "UniqueTitleOne")
-            FactoryGirl.create(:podcast, :title => "UniqueTitleTwo")
+          before do
+            FactoryGirl.create :podcast, title: "UniqueTitleOne"
+            FactoryGirl.create :podcast, title: "UniqueTitleTwo"
           end
 
           it "shows two items" do
             visit refinery.podcasts_admin_podcasts_path
-            page.should have_content("UniqueTitleOne")
-            page.should have_content("UniqueTitleTwo")
+            expect(page).to have_content("UniqueTitleOne")
+            expect(page).to have_content("UniqueTitleTwo")
           end
         end
 
@@ -32,7 +30,7 @@ describe Refinery do
               fill_in "Title", :with => "This is a test of the first string field"
               click_button "Save"
 
-              page.should have_content("'This is a test of the first string field' was successfully added.")
+              expect(page).to have_content("'This is a test of the first string field' was successfully added.")
               Refinery::Podcasts::Podcast.count.should == 1
             end
           end
@@ -41,7 +39,7 @@ describe Refinery do
             it "should fail" do
               click_button "Save"
 
-              page.should have_content("Title can't be blank")
+              expect(page).to have_content("Title can't be blank")
               Refinery::Podcasts::Podcast.count.should == 0
             end
           end
@@ -57,7 +55,7 @@ describe Refinery do
               fill_in "Title", :with => "UniqueTitle"
               click_button "Save"
 
-              page.should have_content("There were problems")
+              expect(page).to have_content("There were problems")
               Refinery::Podcasts::Podcast.count.should == 1
             end
           end
@@ -77,8 +75,8 @@ describe Refinery do
             fill_in "Title", :with => "A different title"
             click_button "Save"
 
-            page.should have_content("'A different title' was successfully updated.")
-            page.should have_no_content("A title")
+            expect(page).to have_content("'A different title' was successfully updated.")
+            expect(page).to have_no_content("A title")
           end
         end
 
@@ -90,7 +88,7 @@ describe Refinery do
 
             click_link "Remove this podcast forever"
 
-            page.should have_content("'UniqueTitleOne' was successfully removed.")
+            expect(page).to have_content("'UniqueTitleOne' was successfully removed.")
             Refinery::Podcasts::Podcast.count.should == 0
           end
         end

@@ -6,13 +6,12 @@ module Refinery
     class Podcast < Refinery::Core::BaseModel
       self.table_name = 'refinery_podcasts'
 
-      attr_accessible :title, :author, :subtitle, :file_id, :published_at, :duration, :keywords, :summary, :position
-
       acts_as_indexed :fields => [:title, :author, :subtitle, :duration, :keywords, :summary]
 
       validates :title, :presence => true, :uniqueness => true
 
       belongs_to :file, :class_name => '::Refinery::Resource'
+      belongs_to :image, :class_name => '::Refinery::Image'
 
       extend FriendlyId
 
@@ -24,9 +23,11 @@ module Refinery
                    count
       end
 
-      default_scope :order => "published_at DESC"
-
       class << self
+        def default_scope
+          order "published_at DESC"
+        end
+
         def published
           where arel_table[:published_at].lteq(Date.today)
         end

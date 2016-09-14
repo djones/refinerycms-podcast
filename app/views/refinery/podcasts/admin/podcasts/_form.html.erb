@@ -9,13 +9,13 @@
   </div>
 
   <div class='field'>
-    <%= f.label :author -%>
-    <%= f.text_field :author  -%>
+    <%= f.label :subtitle -%>
+    <%= f.text_field :subtitle, :size => 100  -%>
   </div>
 
   <div class='field'>
-    <%= f.label :subtitle -%>
-    <%= f.text_field :subtitle, :size => 100  -%>
+    <%= f.label :author -%>
+    <%= f.text_field :author  -%>
   </div>
 
   <div class='field'>
@@ -28,6 +28,19 @@
                :field => :file_id,
                :resource => @podcast.file,
                :description => 'podcast' %>
+  </div>
+
+  <div class="field">
+    <span class="label_with_help">
+      <%= f.label :image_id, "Podcast episode image" -%>
+      <%= refinery_help_tag "iTunes prefers square .jpg or .png images that are between 1400 x 1400 pixels and 3000 x 3000 pixels" %>
+    </span>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+          :f => f,
+          :field => :image_id,
+          :image => @podcast.image,
+          :toggle_image_display => false
+        } %>
   </div>
 
   <div class='field'>

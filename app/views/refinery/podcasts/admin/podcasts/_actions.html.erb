@@ -1,8 +1,6 @@
 <ul>
   <% if ::Refinery::Podcasts::Admin::PodcastsController.searchable? %>
-    <li>
-      <%= render '/refinery/admin/search', :url => refinery.podcasts_admin_podcasts_path %>
-    </li>
+    <li><%= render '/refinery/admin/search', url: refinery.admin_pages_path -%></li>
   <% end %>
   <li>
     <%= link_to t('.create_new'), refinery.new_podcasts_admin_podcast_path,

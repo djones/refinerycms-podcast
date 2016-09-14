@@ -1,0 +1,47 @@
+Refinery::Podcasts.configure do |config|
+  # What your podcast show is called.
+  #
+  # config.title = <%= Refinery::Podcasts.title.inspect %>
+
+  # A subtitle/byline for your podcast show
+  # config.subtitle = <%= Refinery::Podcasts.subtitle.inspect %>
+
+  # The contents of this tag are shown in a separate window that appears when the
+  # "circled i" in the Description column is clicked. It also appears on the iTunes
+  # page for your podcast. This field can be up to 4000 characters.
+  #
+  # config.description = <%= Refinery::Podcasts.description.inspect %>
+
+  # The content of this tag is shown in the Artist column in iTunes.
+  #
+  # config.author = <%= Refinery::Podcasts.author.inspect %>
+
+  # This tag should be used to indicate whether or not your podcast contains
+  # explicit material. The three values for this tag are "yes", "no", and "clean".
+  #
+  # config.explicit_content = <%= Refinery::Podcasts.explicit_content.inspect %>
+
+  # Accepted values are those in the ISO 639-1 Alpha-2 list
+  # (two-letter language codes, some with possible modifiers, such as 'en-us').
+  #
+  # config.language = <%= Refinery::Podcasts.language.inspect %>
+
+  # iTunes prefers square .jpg or .png images that are between
+  # 1400 x 1400 pixels and 3000 x 3000 pixels
+  # You could upload an image to your resources tab and link it in here.
+  #
+  # config.image_url = <%= Refinery::Podcasts.image_url.inspect %>
+
+  # select from the list of categories here:
+  # https://help.apple.com/itc/podcasts_connect/?lang=en#/itc9267a2f12
+  #
+  # config.category = <%= Refinery::Podcasts.category.inspect %>
+  # config.subcategory = <%= Refinery::Podcasts.subcategory.inspect %>
+
+  # The owner name and email tags contain information that will be used to
+  # contact the owner of the podcast for communication specifically about their
+  # podcast. It should not be publicly displayed.
+  #
+  # config.owner_name = <%= Refinery::Podcasts.owner_name.inspect %>
+  # config.owner_email = <%= Refinery::Podcasts.owner_email.inspect %>
+end
