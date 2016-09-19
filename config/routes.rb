@@ -1,14 +1,19 @@
-Refinery::Application.routes.draw do
-  resources :podcasts, :only => [:index, :show]
+Refinery::Core::Engine.routes.append do
 
-  scope(:path => 'refinery', :as => 'admin', :module => 'admin') do
-    resources :podcasts, :except => :show do
-      collection do
-        post :update_positions
-        get :settings
+  # Frontend routes
+  namespace :podcasts do
+    resources :podcasts, :path => '', :only => [:index, :show]
+  end
+
+  # Admin routes
+  namespace :podcasts, :path => '' do
+    namespace :admin, :path => 'refinery' do
+      resources :podcasts, :except => :show do
+        collection do
+          post :update_positions
+        end
       end
     end
   end
-  
-  #match '/podcast.rss' => "podcasts/#index", :as => :podcast, :format => 'rss'
+
 end

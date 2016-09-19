@@ -1,0 +1,91 @@
+# Rails
+.bundle
+db/*.sqlite3
+db/*.sqlite3-journal
+*.log
+tmp
+tmp/**/*
+pkg
+spec/dummy
+
+# Documentation
+doc/api
+doc/app
+.yardoc
+.yardopts
+coverage
+
+# Public Uploads
+public/system/*
+public/themes/*
+
+# Public Cache
+public/javascripts/cache
+public/stylesheets/cache
+
+# Vendor Cache
+vendor/cache
+
+# Acts as Indexed
+index/**/*
+
+# Refinery Specific
+*.tmproj
+*.autobackupbyrefinery.*
+refinerycms-*.gem
+.autotest
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# NetBeans
+nbproject
+
+# Eclipse
+.project
+
+# Redcar
+.redcar
+
+# Rubinius
+*.rbc
+*.rbx
+
+# Vim
+*.swp
+*.swo
+
+# RubyMine
+.idea
+
+# E-texteditor
+.eprj
+
+# Backup
+*~
+
+# Capybara Bug
+capybara-*html
+
+# sass
+.sass-cache
+.sass-cache/*
+
+# rvm
+.rvmrc
+.rvmrc.*
+
+# rbenv
+.rbenv-version
+
+# Sprockets
+public/assets
+
+#Gemfile's lock file
+Gemfile.lock
+
+# Local Gemfile for developing without sharing dependencies
+.gemfile

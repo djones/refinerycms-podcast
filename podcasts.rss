@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your Podcast Title</title>
+    <link>http://localhost:3001</link>
+    <atom:link href="http://yoursite.com/podcast.rss" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <copyright>© 2016 Jack &amp;amp; Jill</copyright>
+    <itunes:subtitle>A show about everything</itunes:subtitle>
+    <itunes:author>John Doe</itunes:author>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:summary>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Store</itunes:summary>
+    <description>All About Everything is a show about everything. Each week we dive into any subject known to man and talk about it as much as we can. Look for our Podcast in the iTunes Store</description>
+    <itunes:owner>
+      <itunes:name>John Doe</itunes:name>
+      <itunes:email>john.doe@example.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="http://mysite.com/system/0000/1000x1000.jpg"/>
+    <itunes:category text="Technology">
+      <itunes:category text="Software How-To"/>
+    </itunes:category>
+    <item>
+      <title>Episode #1</title>
+      <itunes:author>Philip Arndt</itunes:author>
+      <itunes:subtitle>The first, and best, episode.</itunes:subtitle>
+      <itunes:summary>&lt;p&gt;asdsdasad summary&lt;/p&gt;</itunes:summary>
+      <enclosure url="http://localhost:300120160318%20223154.m4a" length="96029" type=""/>
+      <guid>http://localhost:300120160318 223154.m4a</guid>
+      <pubDate>Tue, 13 Sep 2016 00:00:00 +1200</pubDate>
+      <itunes:duration>0:11</itunes:duration>
+      <itunes:keywords>best, episode, ever</itunes:keywords>
+      <itunes:explicit>no</itunes:explicit>
+    </item>
+  </channel>
+</rss>

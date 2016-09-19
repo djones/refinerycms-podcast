@@ -1,10 +1,14 @@
 # Podcasts engine for Refinery CMS.
 
-## How to build this engine as a gem
+Install using bundler:
 
-    cd vendor/engines/podcasts
-    gem build refinerycms-podcasts.gemspec
-    gem install refinerycms-podcasts.gem
-    
-    # Sign up for a http://rubygems.org/ account and publish the gem
-    gem push refinerycms-podcasts.gem
+```ruby
+gem 'refinerycms-podcast', '~> 2.0'
+```
+
+Next, run:
+
+```
+rails generate refinery:podcast
+rake db:migrate
+```

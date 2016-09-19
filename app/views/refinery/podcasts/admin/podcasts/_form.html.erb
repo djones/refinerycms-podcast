@@ -1,0 +1,98 @@
+<%= form_for [refinery, :podcasts_admin, @podcast] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @podcast,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest'  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :subtitle -%>
+    <%= f.text_field :subtitle, :size => 100  -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :author -%>
+    <%= f.text_field :author  -%>
+  </div>
+
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :file_id, 'Podcast episode file' -%>
+      <%= refinery_help_tag "Supported file formats include .m4a, .mp3, .mov, .mp4, .m4v, and .pdf" %>
+    </span>
+    <%= render '/refinery/admin/resource_picker',
+               :f => f,
+               :field => :file_id,
+               :resource => @podcast.file,
+               :description => 'podcast' %>
+  </div>
+
+  <div class="field">
+    <span class="label_with_help">
+      <%= f.label :image_id, "Podcast episode image" -%>
+      <%= refinery_help_tag "iTunes prefers square .jpg or .png images that are between 1400 x 1400 pixels and 3000 x 3000 pixels" %>
+    </span>
+    <%= render :partial => "/refinery/admin/image_picker", :locals => {
+          :f => f,
+          :field => :image_id,
+          :image => @podcast.image,
+          :toggle_image_display => false
+        } %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :published_at -%>
+    <%= f.date_select :published_at  -%>
+  </div>
+
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :duration -%>
+      <%= refinery_help_tag "In HH:MM:SS format. E.g. \"10:22\" for 10 minutes 22 seconds" %>
+    </span>
+    <%= f.text_field :duration, :size => 6 -%>
+  </div>
+
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :keywords -%>
+      <%= refinery_help_tag "Up to 12 keywords separated by commas. <br/><br/>E.g. rails, ruby on rails, refinerycms, refinery. <br/><br/>According to iTunes, the best use for keywords is to include common misspellings of your name or title, to ensure your podcast is still searchable despite a misspelling. To prevent keyword abuse, iTunes indexes only the first 12 keywords found in this tag." %>
+    </span>
+    <%= f.text_field :keywords, :size => 100  -%><br/>
+  </div>
+
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:summary].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/podcasts/podcast", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:summary].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.podcasts.admin.podcasts.podcast'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @podcast.title) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

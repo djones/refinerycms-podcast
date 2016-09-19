@@ -1,0 +1,23 @@
+<ul>
+  <% if ::Refinery::Podcasts::Admin::PodcastsController.searchable? %>
+    <li><%= render '/refinery/admin/search', url: refinery.admin_pages_path -%></li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_podcasts_admin_podcast_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Podcasts::Admin::PodcastsController.sortable? && ::Refinery::Podcasts::Podcast.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Podcasts"),
+                 refinery.podcasts_admin_podcasts_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Podcasts"),
+                 refinery.podcasts_admin_podcasts_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

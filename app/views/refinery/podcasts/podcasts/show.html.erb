@@ -1,0 +1,59 @@
+<% content_for :body_content_title do %>
+  <%= @podcast.title %>: <%= @podcast.subtitle %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Author</h1>
+    <p>
+      <%=raw @podcast.author %>
+    </p>
+  </section>
+  <% if @podcast.file.present? %>
+    <section>
+      <h1>Listen Now</h1>
+      <p>
+        <%= link_to 'listen now', @podcast.file.url %>
+      </p>
+    </section>
+  <% end %>
+  <section>
+    <h1>Published At</h1>
+    <p>
+      <%=raw @podcast.published_at %>
+    </p>
+  </section>
+  <section>
+    <h1>Duration</h1>
+    <p>
+      <%=raw @podcast.duration %>
+    </p>
+  </section>
+  <section>
+    <h1>Keywords</h1>
+    <p>
+      <%=raw @podcast.keywords %>
+    </p>
+  </section>
+  <section>
+    <h1>Summary</h1>
+    <p>
+      <%=raw @podcast.summary %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="podcasts">
+      <% @podcasts.each do |podcast| %>
+        <li>
+          <%= link_to podcast.title, refinery.podcasts_podcast_path(podcast) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
