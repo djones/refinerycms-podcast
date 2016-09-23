@@ -3,7 +3,7 @@
 Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.name              = "refinerycms-podcast"
-  s.version           = "1.0.0"
+  s.version           = "1.0.1"
   s.description       = "Podcasting extension for Refinery CMS"
   s.date              = "2016-09-15"
   s.summary           = "Podcasts extension for Refinery CMS"

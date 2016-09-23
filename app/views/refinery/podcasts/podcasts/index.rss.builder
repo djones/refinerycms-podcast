@@ -65,6 +65,9 @@ xml.rss 'xmlns:itunes' => 'http://www.itunes.com/dtds/podcast-1.0.dtd', :version
         xml.tag!('itunes:duration', item.duration)
         xml.tag!('itunes:keywords', item.keywords)
         xml.tag!('itunes:explicit', Refinery::Podcasts.explicit_content)
+        if item.image.present?
+          xml.tag('itunes:image', request.protocol + request.host_with_port + item.image.url)
+        end
       end
     end
   end
