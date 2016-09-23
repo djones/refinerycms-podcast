@@ -13,6 +13,8 @@ module Refinery
       belongs_to :file, :class_name => '::Refinery::Resource'
       belongs_to :image, :class_name => '::Refinery::Image'
 
+      validates :file, presence: true
+
       extend FriendlyId
 
       friendly_id :title, :use => :slugged
